@@ -10,11 +10,12 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView mResultField;
-    EditText mNumberField;
-    TextView mOperationField;
-    Double mOperationNumber = null;
-    String mLastOperations = "=";
+    private TextView mResultField;
+    private EditText mNumberField;
+    private TextView mOperationField;
+    private Double mOperationNumber = null;
+    private String mLastOperations = "=";
+    private double mCalculatorMemory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +67,43 @@ public class MainActivity extends AppCompatActivity {
         mLastOperations = operation;
         if(operation != "=") {
             mOperationField.setText(mLastOperations);
+        }
+    }
+
+    public void onMemoryClick(View view){
+        Button button = (Button)view;
+        String memoryOperation = button.getText().toString();
+
+        String number = mResultField.getText().toString();
+        double number_double;
+        if (mResultField.getText().toString() != "") {
+            number = number.replace(',', '.');
+            number_double = Double.valueOf(number);
+        }
+        else number_double = 0;
+
+        switch (memoryOperation) {
+            case "MC":
+                mCalculatorMemory = 0;
+                mResultField.setText("");
+                mNumberField.setText("");
+                mOperationField.setText("");
+                break;
+            case "M+":
+                if (!number.equals("")) {
+                    mCalculatorMemory = mCalculatorMemory + number_double;
+                }
+                break;
+            case "M-":
+                if (!number.equals("")) {
+                    mCalculatorMemory = mCalculatorMemory - number_double;
+                }
+                break;
+            case "MR":
+                if(mCalculatorMemory != 0) {
+                    mResultField.setText(Double.toString(mCalculatorMemory));
+                }
+                break;
         }
     }
 
