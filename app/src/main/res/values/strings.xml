@@ -1,23 +1,32 @@
 <resources>
     <string name="app_name">Project_Calculator</string>
-    <string name="seven">7</string>
-    <string name="eight">8</string>
-    <string name="nine">9</string>
-    <string name="divide">/</string>
-    <string name="four">4</string>
-    <string name="five">5</string>
-    <string name="six">6</string>
-    <string name="multiply">*</string>
+
+    <!--numbers-->
     <string name="one">1</string>
     <string name="two">2</string>
     <string name="three">3</string>
-    <string name="minus">-</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
     <string name="zero">0</string>
     <string name="coma">,</string>
+
+    <!--numbers operations-->
     <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="multiply">*</string>
+    <string name="divide">/</string>
     <string name="equals">=</string>
+
+    <!-- memory operations-->
     <string name="memory_clear">MC</string>
     <string name="add_to_memory">M+</string>
     <string name="delete_from_memory">M-</string>
     <string name="memory_recall">MR</string>
+
+    <string name="operation">OPERATION</string>
+    <string name="operation_number">OPERATION_NUMBER</string>
 </resources>

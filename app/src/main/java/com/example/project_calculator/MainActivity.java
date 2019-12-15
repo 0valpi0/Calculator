@@ -8,13 +8,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView mResultField;
     private EditText mNumberField;
     private TextView mOperationField;
     private Double mOperationNumber = null;
-    private String mLastOperations = "=";
+    private String mLastOperation;
     private double mCalculatorMemory;
 
     @Override
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mLastOperation = getString(R.string.equals);
         mResultField = findViewById(R.id.resultField);
         mNumberField = findViewById(R.id.numberField);
         mOperationField = findViewById(R.id.operationField);
@@ -29,20 +32,21 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        outState.putString("OPERATION", mLastOperations);
-        if(mOperationNumber != null)
-            outState.putDouble("OPERATION_NUMBER", mOperationNumber);
+        outState.putString(getString(R.string.operation), mLastOperation);
+        if(mOperationNumber != null) {
+            outState.putDouble(getString(R.string.operation_number), mOperationNumber);
+        }
         super.onSaveInstanceState(outState);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        mLastOperations = savedInstanceState.getString("OPERATION");
-        mOperationNumber = savedInstanceState.getDouble("OPERATION_NUMBER");
-        mResultField.setText(mOperationNumber.toString());
-        if (mLastOperations != "=") {
-            mOperationField.setText(mLastOperations);
+        mLastOperation = savedInstanceState.getString(getString(R.string.operation));
+        mOperationNumber = savedInstanceState.getDouble(getString(R.string.operation_number));
+        mResultField.setText(String.format(Locale.getDefault(), "%s", mOperationNumber));
+        if (!mLastOperation.equals("=")) {
+            mOperationField.setText(mLastOperation);
         }
     }
 
@@ -50,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         Button button = (Button)view;
         mNumberField.append(button.getText());
 
-        if(mLastOperations.equals("=") && mOperationNumber != null){
+        if(mLastOperation.equals("=") && mOperationNumber != null){
             mOperationNumber = null;
         }
     }
@@ -64,9 +68,9 @@ public class MainActivity extends AppCompatActivity {
             number = number.replace(',', '.');
             performOperation(Double.valueOf(number), operation);
         }
-        mLastOperations = operation;
-        if(operation != "=") {
-            mOperationField.setText(mLastOperations);
+        mLastOperation = operation;
+        if(!operation.equals("=")) {
+            mOperationField.setText(mLastOperation);
         }
     }
 
@@ -76,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
         String number = mResultField.getText().toString();
         double number_double;
-        if (mResultField.getText().toString() != "") {
+        if (!mResultField.getText().toString().equals("")) {
             number = number.replace(',', '.');
             number_double = Double.valueOf(number);
         }
@@ -101,7 +105,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case "MR":
                 if(mCalculatorMemory != 0) {
-                    mResultField.setText(Double.toString(mCalculatorMemory));
+
+                    mResultField.setText(String.format(Locale.getDefault(), "%s", mCalculatorMemory));//Double.toString(mCalculatorMemory));
                 }
                 break;
         }
@@ -112,10 +117,10 @@ public class MainActivity extends AppCompatActivity {
             mOperationNumber = number;
         }
         else{
-            if(mLastOperations.equals("=")){
-                mLastOperations = operation;
+            if(mLastOperation.equals("=")){
+                mLastOperation = operation;
             }
-            switch(mLastOperations){
+            switch(mLastOperation){
                 case "=":
                     mOperationNumber = number;
                     break;
@@ -143,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }
-        mResultField.setText(mOperationNumber.toString().replace('.', ','));
+        mResultField.setText(String.format(Locale.getDefault(), "%s", mOperationNumber).replace('.', ','));
         mNumberField.setText("");
     }
 }

@@ -11,323 +11,154 @@
 
 <TableRow
     android:id="@+id/activity_main"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center_horizontal"
-    android:layout_weight="20"
-    android:orientation="vertical"
-    android:padding="16dp">
+    style="@style/TableRow"
+    android:orientation="horizontal"
+    android:layout_margin="5dp">
 
     <TextView
+        style="@style/TextForm"
         android:id="@+id/resultField"
-        android:layout_width="0dp"
-        android:layout_span="2"
-        android:textSize="@dimen/text_size"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorAccent"/>
+        android:layout_span="3" />
 
     <TextView
+        style="@style/TextForm"
         android:id="@+id/operationField"
-        android:layout_width="wrap_content"
-        android:layout_span="1"
-        android:textSize="@dimen/text_size"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorAccent"
-        />
+        android:layout_span="1" />
 
 </TableRow>
 
 <TableRow>
 
     <EditText
+        style="@style/TextForm"
         android:id="@+id/numberField"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:inputType="phone"
-        android:textColor="@color/colorAccent"
-        android:layout_span="4"
-        android:textSize="@dimen/text_size"/>
+        android:layout_span="4" />
 
 </TableRow>
 
     <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_weight="20">
+        style="@style/TableRow">
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            style="@style/OperationButton"
             android:text="@string/memory_clear"
-            android:onClick="onMemoryClick"
-            android:background="@color/orange"
-            android:textColor="@color/colorAccent"
-            android:layout_span="1"
-            android:layout_marginEnd="@dimen/marginRight"
-            android:layout_marginTop="@dimen/marginRight"
-            android:textSize="@dimen/text_size"/>
+            android:onClick="onMemoryClick" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            style="@style/OperationButton"
             android:text="@string/add_to_memory"
-            android:onClick="onMemoryClick"
-            android:background="@color/orange"
-            android:textColor="@color/colorAccent"
-            android:layout_span="1"
-            android:layout_marginEnd="@dimen/marginRight"
-            android:layout_marginTop="@dimen/marginRight"
-            android:textSize="@dimen/text_size"/>
+            android:onClick="onMemoryClick" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            style="@style/OperationButton"
             android:text="@string/delete_from_memory"
-            android:onClick="onMemoryClick"
-            android:background="@color/orange"
-            android:textColor="@color/colorAccent"
-            android:layout_span="1"
-            android:layout_marginEnd="@dimen/marginRight"
-            android:layout_marginTop="@dimen/marginRight"
-            android:textSize="@dimen/text_size"/>
+            android:onClick="onMemoryClick" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            style="@style/OperationButton"
             android:text="@string/memory_recall"
-            android:onClick="onMemoryClick"
-            android:background="@color/orange"
-            android:textColor="@color/colorAccent"
-            android:layout_span="1"
-            android:layout_marginEnd="@dimen/marginRight"
-            android:layout_marginTop="@dimen/marginRight"
-            android:textSize="@dimen/text_size"/>
+            android:onClick="onMemoryClick" />
 
     </TableRow>
 
     <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_weight="20">
+        style="@style/TableRow">
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            style="@style/NumberButton"
             android:text="@string/seven"
-            android:onClick="onNumberClick"
-            android:background="@color/colorPrimaryDark"
-            android:textColor="@color/colorAccent"
-            android:layout_span="1"
-            android:layout_marginEnd="@dimen/marginRight"
-            android:layout_marginTop="@dimen/marginRight"
-            android:textSize="@dimen/text_size"/>
+            android:onClick="onNumberClick" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            style="@style/NumberButton"
             android:text="@string/eight"
-            android:onClick="onNumberClick"
-            android:background="@color/colorPrimaryDark"
-            android:textColor="@color/colorAccent"
-            android:layout_span="1"
-            android:layout_marginEnd="@dimen/marginRight"
-            android:layout_marginTop="@dimen/marginRight"
-            android:textSize="@dimen/text_size"/>
+            android:onClick="onNumberClick" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            style="@style/NumberButton"
             android:text="@string/nine"
-            android:onClick="onNumberClick"
-            android:background="@color/colorPrimaryDark"
-            android:textColor="@color/colorAccent"
-            android:layout_span="1"
-            android:layout_marginEnd="@dimen/marginRight"
-            android:layout_marginTop="@dimen/marginRight"
-            android:textSize="@dimen/text_size"/>
+            android:onClick="onNumberClick" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            style="@style/OperationButton"
             android:text="@string/divide"
-            android:onClick="onOperationClick"
-            android:background="@color/orange"
-            android:textColor="@color/colorAccent"
-            android:layout_span="1"
-            android:layout_marginEnd="@dimen/marginRight"
-            android:layout_marginTop="@dimen/marginRight"
-            android:textSize="@dimen/text_size"/>
+            android:onClick="onOperationClick" />
 
     </TableRow>
 
     <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_weight="20">
+        style="@style/TableRow">
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            style="@style/NumberButton"
             android:text="@string/four"
-            android:onClick="onNumberClick"
-            android:background="@color/colorPrimaryDark"
-            android:textColor="@color/colorAccent"
-            android:layout_span="1"
-            android:layout_marginEnd="@dimen/marginRight"
-            android:layout_marginTop="@dimen/marginRight"
-            android:textSize="@dimen/text_size"/>
+            android:onClick="onNumberClick" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            style="@style/NumberButton"
             android:text="@string/five"
-            android:onClick="onNumberClick"
-            android:background="@color/colorPrimaryDark"
-            android:textColor="@color/colorAccent"
-            android:layout_span="1"
-            android:layout_marginEnd="@dimen/marginRight"
-            android:layout_marginTop="@dimen/marginRight"
-            android:textSize="@dimen/text_size"/>
+            android:onClick="onNumberClick" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            style="@style/NumberButton"
             android:text="@string/six"
-            android:onClick="onNumberClick"
-            android:background="@color/colorPrimaryDark"
-            android:textColor="@color/colorAccent"
-            android:layout_span="1"
-            android:layout_marginEnd="@dimen/marginRight"
-            android:layout_marginTop="@dimen/marginRight"
-            android:textSize="@dimen/text_size"/>
+            android:onClick="onNumberClick" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            style="@style/OperationButton"
             android:text="@string/multiply"
-            android:onClick="onOperationClick"
-            android:background="@color/orange"
-            android:textColor="@color/colorAccent"
-            android:layout_span="1"
-            android:layout_marginEnd="@dimen/marginRight"
-            android:layout_marginTop="@dimen/marginRight"
-            android:textSize="@dimen/text_size"/>
+            android:onClick="onOperationClick" />
 
     </TableRow>
 
     <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_weight="20">
+        style="@style/TableRow">
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            style="@style/NumberButton"
             android:text="@string/one"
-            android:onClick="onNumberClick"
-            android:background="@color/colorPrimaryDark"
-            android:textColor="@color/colorAccent"
-            android:layout_span="1"
-            android:layout_marginEnd="@dimen/marginRight"
-            android:layout_marginTop="@dimen/marginRight"
-            android:textSize="@dimen/text_size"/>
+            android:onClick="onNumberClick" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            style="@style/NumberButton"
             android:text="@string/two"
-            android:onClick="onNumberClick"
-            android:background="@color/colorPrimaryDark"
-            android:textColor="@color/colorAccent"
-            android:layout_span="1"
-            android:layout_marginEnd="@dimen/marginRight"
-            android:layout_marginTop="@dimen/marginRight"
-            android:textSize="@dimen/text_size"/>
+            android:onClick="onNumberClick" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            style="@style/NumberButton"
             android:text="@string/three"
-            android:onClick="onNumberClick"
-            android:background="@color/colorPrimaryDark"
-            android:textColor="@color/colorAccent"
-            android:layout_span="1"
-            android:layout_marginEnd="@dimen/marginRight"
-            android:layout_marginTop="@dimen/marginRight"
-            android:textSize="@dimen/text_size"/>
+            android:onClick="onNumberClick" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            style="@style/OperationButton"
             android:text="@string/minus"
-            android:onClick="onOperationClick"
-            android:background="@color/orange"
-            android:textColor="@color/colorAccent"
-            android:layout_span="1"
-            android:layout_marginEnd="@dimen/marginRight"
-            android:layout_marginTop="@dimen/marginRight"
-            android:textSize="@dimen/text_size"/>
+            android:onClick="onOperationClick" />
 
     </TableRow>
 
     <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_weight="20">
+        style="@style/TableRow">
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            style="@style/NumberButton"
             android:text="@string/zero"
-            android:onClick="onNumberClick"
-            android:background="@color/colorPrimaryDark"
-            android:textColor="@color/colorAccent"
-            android:layout_span="1"
-            android:layout_marginEnd="@dimen/marginRight"
-            android:layout_marginTop="@dimen/marginRight"
-            android:textSize="@dimen/text_size"/>
+            android:onClick="onNumberClick" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            style="@style/NumberButton"
             android:text="@string/coma"
-            android:onClick="onNumberClick"
-            android:background="@color/colorPrimaryDark"
-            android:textColor="@color/colorAccent"
-            android:layout_span="1"
-            android:layout_marginEnd="@dimen/marginRight"
-            android:layout_marginTop="@dimen/marginRight"
-            android:textSize="@dimen/text_size"/>
+            android:onClick="onNumberClick" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            style="@style/NumberButton"
             android:text="@string/plus"
-            android:onClick="onOperationClick"
-            android:background="@color/colorPrimaryDark"
-            android:textColor="@color/colorAccent"
-            android:layout_span="1"
-            android:layout_marginEnd="@dimen/marginRight"
-            android:layout_marginTop="@dimen/marginRight"
-            android:textSize="@dimen/text_size"/>
+            android:onClick="onOperationClick" />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            style="@style/OperationButton"
             android:text="@string/equals"
-            android:onClick="onOperationClick"
-            android:background="@color/orange"
-            android:textColor="@color/colorAccent"
-            android:layout_span="1"
-            android:layout_marginEnd="@dimen/marginRight"
-            android:layout_marginTop="@dimen/marginRight"
-            tools:ignore="ButtonStyle"
-            android:textSize="@dimen/text_size"/>
+            android:onClick="onOperationClick" />
 
     </TableRow>
 
