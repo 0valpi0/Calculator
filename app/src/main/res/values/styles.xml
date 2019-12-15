@@ -1,13 +1,5 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
-
     <style name="OperationButton" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:background">@color/orange</item>
         <item name="android:textColor">@color/colorAccent</item>
@@ -19,9 +11,20 @@
         <item name="android:layout_span">1</item>
     </style>
 
-    <style name="NumberButton" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="NumberButtonDark" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:background">@color/colorPrimaryDark</item>
         <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginEnd">@dimen/marginRight</item>
+        <item name="android:layout_marginTop">@dimen/marginRight</item>
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:layout_span">1</item>
+    </style>
+
+    <style name="NumberButtonLight" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:textColor">@color/black</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_marginEnd">@dimen/marginRight</item>
@@ -37,11 +40,38 @@
         <item name="android:layout_weight">20</item>
     </style>
 
-    <style name="TextForm" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="TextFormDark" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/text_size</item>
         <item name="android:textColor">@color/colorAccent</item>
         <item name="android:padding">@dimen/text_padding</item>
     </style>
+
+    <style name="TextFormLight" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:padding">@dimen/text_padding</item>
+    </style>
+
+    <style name="ThemeButtonLight" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:layout_marginStart">50dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:background">@drawable/ic_brightness_6_black_24dp</item>
+        <item name="android:layout_column">3</item>
+        <item name="android:layout_span">1</item>
+    </style>
+
+    <style name="ThemeButtonDark" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:layout_marginStart">50dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:background">@drawable/ic_brightness_6_white_24dp</item>
+        <item name="android:layout_column">3</item>
+        <item name="android:layout_span">1</item>
+    </style>
+
 </resources>

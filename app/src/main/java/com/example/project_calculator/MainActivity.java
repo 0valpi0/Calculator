@@ -2,10 +2,15 @@ package com.example.project_calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.Locale;
@@ -18,16 +23,36 @@ public class MainActivity extends AppCompatActivity {
     private Double mOperationNumber = null;
     private String mLastOperation;
     private double mCalculatorMemory;
+    private ImageButton mThemeButton;
+    private static int mTheme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Themes.onActivityCreateSetTheme(this);
         setContentView(R.layout.activity_main);
 
         mLastOperation = getString(R.string.equals);
         mResultField = findViewById(R.id.resultField);
         mNumberField = findViewById(R.id.numberField);
         mOperationField = findViewById(R.id.operationField);
+        mThemeButton = findViewById(R.id.theme_button);
+
+        mThemeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mTheme == 0) {
+                    Themes.changeToTheme(MainActivity.this, 1);
+                    mTheme = 1;
+                    Log.d("THEME", "onClick: theme white");
+                }
+                else {
+                    Themes.changeToTheme(MainActivity.this, 0);
+                    mTheme = 0;
+                    Log.d("THEME", "onClick: theme black");
+                }
+            }
+        });
     }
 
     @Override

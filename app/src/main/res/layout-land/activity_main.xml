@@ -1,33 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout
+<TableLayout xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     android:shrinkColumns="*"
     android:stretchColumns="*"
-    android:weightSum="140"
+    android:weightSum="120"
     android:layout_alignParentBottom="true">
 
-    <TableRow
-        style="@style/TableRow"
-        android:layout_weight="20">
-
-        <ImageButton
-            android:id="@+id/theme_button"
-            style="?ThemeButton"/>
-
-    </TableRow>
-
 <TableRow
-    style="@style/TableRow">
+    android:id="@+id/activity_main"
+    style="@style/TableRow"
+    android:orientation="horizontal"
+    android:layout_margin="5dp">
 
     <TextView
-        style="?TextForm"
+        style="@style/TextFormDark"
         android:id="@+id/resultField"
         android:layout_span="3" />
 
     <TextView
-        style="?TextForm"
+        style="@style/TextFormDark"
         android:id="@+id/operationField"
         android:layout_span="1" />
 
@@ -36,7 +30,7 @@
 <TableRow>
 
     <EditText
-        style="?TextForm"
+        style="@style/TextFormDark"
         android:id="@+id/numberField"
         android:inputType="phone"
         android:layout_span="4" />
@@ -47,44 +41,23 @@
         style="@style/TableRow">
 
         <Button
-            style="@style/OperationButton"
-            android:text="@string/memory_clear"
-            android:onClick="onMemoryClick" />
-
-        <Button
-            style="@style/OperationButton"
-            android:text="@string/add_to_memory"
-            android:onClick="onMemoryClick" />
-
-        <Button
-            style="@style/OperationButton"
-            android:text="@string/delete_from_memory"
-            android:onClick="onMemoryClick" />
-
-        <Button
-            style="@style/OperationButton"
-            android:text="@string/memory_recall"
-            android:onClick="onMemoryClick" />
-
-    </TableRow>
-
-    <TableRow
-        style="@style/TableRow">
-
-        <Button
-            style="?NumberButton"
+            style="@style/NumberButtonDark"
             android:text="@string/seven"
             android:onClick="onNumberClick" />
 
         <Button
-            style="?NumberButton"
+            style="@style/NumberButtonDark"
             android:text="@string/eight"
             android:onClick="onNumberClick" />
 
         <Button
-            style="?NumberButton"
+            style="@style/NumberButtonDark"
             android:text="@string/nine"
             android:onClick="onNumberClick" />
+        <Button
+            style="@style/OperationButton"
+            android:text="@string/memory_clear"
+            android:onClick="onMemoryClick" />
 
         <Button
             style="@style/OperationButton"
@@ -97,19 +70,23 @@
         style="@style/TableRow">
 
         <Button
-            style="?NumberButton"
+            style="@style/NumberButtonDark"
             android:text="@string/four"
             android:onClick="onNumberClick" />
 
         <Button
-            style="?NumberButton"
+            style="@style/NumberButtonDark"
             android:text="@string/five"
             android:onClick="onNumberClick" />
 
         <Button
-            style="?NumberButton"
+            style="@style/NumberButtonDark"
             android:text="@string/six"
             android:onClick="onNumberClick" />
+        <Button
+            style="@style/OperationButton"
+            android:text="@string/add_to_memory"
+            android:onClick="onMemoryClick" />
 
         <Button
             style="@style/OperationButton"
@@ -122,19 +99,23 @@
         style="@style/TableRow">
 
         <Button
-            style="?NumberButton"
+            style="@style/NumberButtonDark"
             android:text="@string/one"
             android:onClick="onNumberClick" />
 
         <Button
-            style="?NumberButton"
+            style="@style/NumberButtonDark"
             android:text="@string/two"
             android:onClick="onNumberClick" />
 
         <Button
-            style="?NumberButton"
+            style="@style/NumberButtonDark"
             android:text="@string/three"
             android:onClick="onNumberClick" />
+        <Button
+            style="@style/OperationButton"
+            android:text="@string/delete_from_memory"
+            android:onClick="onMemoryClick" />
 
         <Button
             style="@style/OperationButton"
@@ -147,19 +128,23 @@
         style="@style/TableRow">
 
         <Button
-            style="?NumberButton"
+            style="@style/NumberButtonDark"
             android:text="@string/zero"
             android:onClick="onNumberClick" />
 
         <Button
-            style="?NumberButton"
+            style="@style/NumberButtonDark"
             android:text="@string/coma"
             android:onClick="onNumberClick" />
 
         <Button
-            style="?NumberButton"
+            style="@style/NumberButtonDark"
             android:text="@string/plus"
             android:onClick="onOperationClick" />
+        <Button
+            style="@style/OperationButton"
+            android:text="@string/memory_recall"
+            android:onClick="onMemoryClick" />
 
         <Button
             style="@style/OperationButton"

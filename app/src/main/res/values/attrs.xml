@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="NumberButton" format="reference" />
+    <attr name="TextForm" format="reference" />
+    <attr name="ThemeButton" format="reference" />
+</resources>
